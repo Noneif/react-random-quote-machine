@@ -10,6 +10,7 @@ import { server } from "./gulp/tasks/server.js";
 import { scss } from "./gulp/tasks/scss.js";
 import { js } from "./gulp/tasks/js.js";
 import { zip } from "./gulp/tasks/zip.js";
+import { gh } from "./gulp/tasks/gh-pages.js";
 
 // transmit values to global variables
 global.app = {
@@ -33,10 +34,11 @@ const mainTasks = gulp.series(gulp.parallel(html, scss, js));
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainTasks);
 const deployZIP = gulp.series(reset, mainTasks, zip);
+const deployGH = gulp.series(reset, mainTasks, gh);
 
 // export scenarios
 
-export { dev, build, deployZIP };
+export { dev, build, deployZIP, deployGH };
 
 // performing default scenario
 gulp.task("default", dev);
