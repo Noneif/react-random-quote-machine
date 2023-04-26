@@ -95,7 +95,7 @@ export class App extends React.Component {
         </div>
         <footer className="footer">
           by{" "}
-          <a href="https://codepen.io/noneif/pen/JjaqgbW" target="_blank">
+          <a href="https://github.com/Noneif" target="_blank">
             NoName
           </a>
         </footer>
